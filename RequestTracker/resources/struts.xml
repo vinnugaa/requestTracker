@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation"
+        value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources"
+        value="ApplicationResources" />
+ 
+    <package name="default" extends="struts-default" namespace="/">
+        <!-- LOGIN -->
+        <action name="login"
+            class="com.tracker.action.Login">
+            <result name="success">/jsp/home.jsp</result>
+            <result name="error">/jsp/login.jsp</result>
+        </action>
+        
+        <!-- USER -->
+        <action name="adduser" method="add"
+            class="com.tracker.action.UserAction">
+            <result name="success">/jsp/home.jsp</result>
+            <result name="error">/jsp/login.jsp</result>
+        </action>
+        <action name="updateuser" method="update"
+            class="com.tracker.action.UserAction">
+            <result name="success">/jsp/home.jsp</result>
+            <result name="error">/jsp/login.jsp</result>
+        </action>
+        <action name="allusers" method="listAll"
+            class="com.tracker.action.UserAction">
+            <result name="success">/jsp/home.jsp</result>
+            <result name="error">/jsp/login.jsp</result>
+        </action>
+        
+        
+        <!-- TABLE CREATION & DROPS -->
+        <action name="createusertable" method="createUserTable"
+            class="com.tracker.action.DBTableSetup">
+            <result name="success">/jsp/home.jsp</result>
+            <result name="error">/jsp/login.jsp</result>
+        </action>
+        <action name="removeusertable" method="removeUserTable"
+            class="com.tracker.action.DBTableSetup">
+            <result name="success">/jsp/home.jsp</result>
+            <result name="error">/jsp/login.jsp</result>
+        </action>
+        
+    </package>
+</struts>
