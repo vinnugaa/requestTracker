@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.tracker.constants.AllConstants;
 import com.tracker.data.DataResult;
 import com.tracker.delegate.BusinessDelegate;
 import com.tracker.model.User;
@@ -37,7 +38,7 @@ public class UserAction {
 		user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());
-		bd.setServiceInput("ADD_USER", Utility.getInstance().toJson(user));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(user));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
@@ -49,7 +50,7 @@ public class UserAction {
 		/*user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput("DELETE_USER", Utility.getInstance().toJson(user));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(user));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
@@ -61,7 +62,7 @@ public class UserAction {
 		user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());
-		bd.setServiceInput("UPDATE_USER", Utility.getInstance().toJson(user));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(user));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
@@ -73,45 +74,11 @@ public class UserAction {
 		user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput("ALL_USER", "");
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
 		dataResult = bd.doTask();
 		return dataResult.data;
 	}
-	
-	/*
-	public String add(){
-		String result = "failure";
-		User user = new User();
-		user = (User)Utility.getInstance().reflector(this, user);
-		UserDB.getInstance().addUser(user);
-		result = "success";
-		return result;
-	}
-	
-	public String delete(){
-		String result = "failure";
-		User user = new User();
-		user = (User)Utility.getInstance().reflector(this, user);
-		UserDB.getInstance().deleteUser(user);
-		result = "success";
-		return result;
-	}
-	
-	public String update(){
-		String result="failure";
-		User user = new User();
-		user = (User)Utility.getInstance().reflector(this, user);
-		UserDB.getInstance().updateUser(user);	
-		result = "success";
-		return result;
-	}
-	public String listAll(){
-		String users = "";
-		users = UserDB.getInstance().listUsers();
-		setUserList(users);
-		return "success";
-	}
-	*/
+
 	public String getUserid() {
 		return userid;
 	}

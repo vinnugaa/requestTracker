@@ -10,7 +10,7 @@ import com.tracker.model.DC;
 public class DcDAO {
 
 	
-	public void addDC(DC dc){
+	public void add(DC dc){
 		try{
 			String command = "INSERT INTO "+ AllConstants.DATABASE_TABLE_PROJECT_ID
 					+ " VALUES ( '"
@@ -26,7 +26,7 @@ public class DcDAO {
 		}
 	}
 	
-	public DC getDC(DC dc){
+	public DC getEach(DC dc){
 		DC resultDC = null;
 		try{
 			String command = "SELECT * FROM " + AllConstants.DATABASE_TABLE_PROJECT_ID
@@ -46,7 +46,7 @@ public class DcDAO {
 		return resultDC;
 	}
 	
-	public List<DC> getAllDC(){
+	public List<DC> getAll(){
 		List<DC> allDC = null;
 		try {
 			String command = "SELECT * FROM " + AllConstants.DATABASE_TABLE_PROJECT_ID;
@@ -68,7 +68,7 @@ public class DcDAO {
 		return allDC;
 	}
 	
-	public void updateDC(DC dc){
+	public void update(DC dc){
 		try{
 			String command = "UPDATE " + AllConstants.DATABASE_TABLE_PROJECT_ID + " SET "
 					+ AllConstants.DESCRIPTION + "='" + dc.getDescription() + "'"
@@ -80,7 +80,7 @@ public class DcDAO {
 			e.printStackTrace();
 		}
 	}
-	public void deleteDC(DC dc){
+	public void delete(DC dc){
 		try {
 			String command= "DELETE FROM "+ AllConstants.DATABASE_TABLE_PROJECT_ID
 					+ " WHERE " + AllConstants.ID + "='"+dc.getId()+"'";

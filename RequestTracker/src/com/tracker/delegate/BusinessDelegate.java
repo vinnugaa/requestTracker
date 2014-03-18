@@ -7,16 +7,18 @@ public class BusinessDelegate {
 
 	private BusinessLookUp businessLookUp = new BusinessLookUp();
 	private BusinessService businessService;
-	private String serviceType;
+	private String mainService;
+	private String subService;
 	private String inputJson;
 
-	public void setServiceInput(String serviceType, String inputJson) {
-		this.serviceType = serviceType;
+	public void setServiceInput(String mainService, String subService, String inputJson) {
+		this.mainService = mainService;
+		this.subService = subService;
 		this.inputJson = inputJson;
 	}
 	
 	public DataResult<String> doTask(){
-		businessService = businessLookUp.getBusinessService(serviceType, inputJson);
+		businessService = businessLookUp.getBusinessService(mainService, subService, inputJson);
 		return businessService.doProcessing();
 	}
 }

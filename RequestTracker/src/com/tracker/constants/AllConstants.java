@@ -2,6 +2,9 @@ package com.tracker.constants;
 
 public class AllConstants {
 
+	//GENERIC ONES
+	public static final String EMPTY_STRING = "";
+	
 	//DATABASE CONSTANTS
 	public static final String DATABASE_NAME = "sampleDB1";
 	public static final String DATABASE_TABLE_PREFIX = "sample";
@@ -24,6 +27,22 @@ public class AllConstants {
 	public static final String DESCRIPTION = "description";
 	public static final String ACTIVE = "active";
 	
-	//public static final String NAME = "name";
+	//SERVICE LOOKUPS
+	public static final String SERVICE_MAIN_USER = "srvcUser";
+	public static final String SERVICE_MAIN_DC = "srvcDC";
+	
+	public static final String SERVICE_METHOD_VALIDATE = "srvcValidate";
+	
+	public static final String SERVICE_METHOD_ADD = "srvcMethodAdd";
+	public static final String SERVICE_METHOD_DELETE = "srvcMethodDel";
+	public static final String SERVICE_METHOD_UPDATE = "srvcMethodUp";
+	public static final String SERVICE_METHOD_ALL = "srvcMethodAll";
+	public static final String SERVICE_METHOD_EACH = "srvcMethodEach";
+	
+	
+	
+	//CACHE KEYS
+	public static final String CACHE_USER_ALL = "cacheUserAll";
+	public static final String CACHE_DC_ALL = "cacheDCAll";
 	
 }

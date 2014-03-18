@@ -6,6 +6,7 @@ import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.google.gson.Gson;
+import com.tracker.constants.AllConstants;
 import com.tracker.data.DataResult;
 import com.tracker.delegate.BusinessDelegate;
 import com.tracker.model.User;
@@ -29,7 +30,7 @@ public class Login implements SessionAware{
 		System.out.println("str::" + str);
 		
 		BusinessDelegate bd = new BusinessDelegate();
-		bd.setServiceInput("VALIDATE_LOGIN", str);
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_VALIDATE, str);
 		dataResult = bd.doTask();
 		
 		if(dataResult.isSuccess) {

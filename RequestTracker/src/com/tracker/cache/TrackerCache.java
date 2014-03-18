@@ -4,22 +4,23 @@ import org.apache.jcs.JCS;
 
 public class TrackerCache {
 	
-	private static JCS cache;
+	private static JCS jcs;
+	private static TrackerCache cache = new TrackerCache();
 	public TrackerCache(){
 		try {
-			cache = JCS.getInstance("trackerCache");
+			jcs = JCS.getInstance("trackerCache");
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 	}
-	public static JCS getInstance(){
+	public static TrackerCache getInstance(){
 		return cache;
 	}
 	
 	public void addObject(String id, Object obj){
 		try {
-			cache.put(id, obj);
+			jcs.put(id, obj);
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -28,7 +29,7 @@ public class TrackerCache {
 	
 	public Object getObject(String id){
 		try {
-			return cache.get(id);
+			return jcs.get(id);
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -38,7 +39,7 @@ public class TrackerCache {
 	
 	public void removeObject(String id){
 		try{
-			cache.remove(id);
+			jcs.remove(id);
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

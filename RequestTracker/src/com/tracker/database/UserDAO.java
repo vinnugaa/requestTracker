@@ -61,7 +61,7 @@ public class UserDAO {
 		}
 	}
 	
-	public List<User> listUsers(){
+	public List<User> getAll(){
 		ResultSet rs= null;
 		List<User> userList = null;
 		User user;
