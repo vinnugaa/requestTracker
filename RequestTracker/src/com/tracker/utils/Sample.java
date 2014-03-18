@@ -26,6 +26,7 @@ public class Sample {
 		System.out.println(tableMap.get(AllConstants.DATABASE_TABLE_WORL_LOG));
 		System.out.println(tableMap.get("pramod"));
 		System.out.println(tableMap.get(AllConstants.DATABASE_TABLE_WORL_LOG));
+		System.out.println("Testing");
 	}
 
 }
