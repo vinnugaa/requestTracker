@@ -51,7 +51,7 @@ public class MarketAction {
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
-	//
+	
 	public boolean update(Market countryName){
 		DataResult<String> dataResult = null;
 		
