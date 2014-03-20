@@ -18,6 +18,7 @@ public class MarketService extends BusinessService {
 		super(method, inputJson);
 		// TODO Auto-generated constructor stub
 	}
+	//
 
 	@Override
 	public DataResult<String> doProcessing() {
