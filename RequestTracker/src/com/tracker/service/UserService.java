@@ -21,7 +21,7 @@ public class UserService extends BusinessService {
 	@Override
 	public DataResult<String> doProcessing() {
 		// TODO Auto-generated method stub
-		DataResult<String> dataResult= null;
+		DataResult<String> dataResult= new DataResult<String>();
 		User srcUser = null, destUser = null;
 		List<User> allUsers = null;
 		UserDAO userDAO = new UserDAO();
@@ -31,24 +31,20 @@ public class UserService extends BusinessService {
 		if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_VALIDATE)){
 			destUser =  userDAO.getUser(srcUser);
 			if(destUser != null){
-				dataResult = new DataResult<String>();
 				dataResult.isSuccess=true;
 				dataResult.data = Utility.getInstance().toJson(destUser);
 			}
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ADD)){
 			userDAO.addUser(srcUser);
-			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			//dataResult.data = Utility.getInstance().toJson(destUser);
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_DELETE)){
 			userDAO.deleteUser(srcUser);
-			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_UPDATE)){
 			userDAO.updateUser(srcUser);
-			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ALL)){
@@ -62,7 +58,6 @@ public class UserService extends BusinessService {
 				allUsers = userDAO.getAll();
 				TrackerCache.getInstance().addObject(AllConstants.CACHE_USER_ALL, allUsers);
 			}
-			dataResult = new DataResult<String>();
 			dataResult.data = Utility.getInstance().toJson(allUsers);
 			dataResult.isSuccess=true;
 			

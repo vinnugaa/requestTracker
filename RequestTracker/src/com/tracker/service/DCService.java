@@ -15,13 +15,11 @@ public class DCService extends BusinessService{
 
 	public DCService(String method, String inputJson) {
 		super(method, inputJson);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public DataResult<String> doProcessing() {
-		// TODO Auto-generated method stub
-		DataResult<String> dataResult= null;
+		DataResult<String> dataResult= new DataResult<String>();
 		DC srcDC=null, destDC=null;
 		List<DC> allDC = null;
 		DcDAO dcDAO = new DcDAO();
@@ -31,24 +29,20 @@ public class DCService extends BusinessService{
 		if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_EACH)){
 			destDC =  dcDAO.getEach(srcDC);
 			if(destDC != null){
-				dataResult = new DataResult<String>();
 				dataResult.isSuccess=true;
 				dataResult.data = Utility.getInstance().toJson(destDC);
 			}
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ADD)){
 			dcDAO.add(srcDC);
-			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			//dataResult.data = Utility.getInstance().toJson(destUser);
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_DELETE)){
 			dcDAO.delete(srcDC);
-			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_UPDATE)){
 			dcDAO.update(srcDC);
-			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ALL)){
@@ -62,7 +56,6 @@ public class DCService extends BusinessService{
 				allDC = dcDAO.getAll();
 				TrackerCache.getInstance().addObject(AllConstants.CACHE_DC_ALL, allDC);
 			}
-			dataResult = new DataResult<String>();
 			dataResult.data = Utility.getInstance().toJson(allDC);
 			dataResult.isSuccess=true;
 			

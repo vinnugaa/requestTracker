@@ -30,6 +30,7 @@ public class AllConstants {
 	//SERVICE LOOKUPS
 	public static final String SERVICE_MAIN_USER = "srvcUser";
 	public static final String SERVICE_MAIN_DC = "srvcDC";
+	public static final String SERVICE_MAIN_TABLES = "srvcTables";
 	
 	public static final String SERVICE_METHOD_VALIDATE = "srvcValidate";
 	
@@ -38,6 +39,11 @@ public class AllConstants {
 	public static final String SERVICE_METHOD_UPDATE = "srvcMethodUp";
 	public static final String SERVICE_METHOD_ALL = "srvcMethodAll";
 	public static final String SERVICE_METHOD_EACH = "srvcMethodEach";
+	public static final String SERVICE_METHOD_PURGE_EACH = "srvcMethodPurgeEach";
+	public static final String SERVICE_METHOD_PURGE_ALL = "srvcMethodPurgeAll";
+	public static final String SERVICE_METHOD_DELETE_ALL = "srvcMethodDelAll";
+	public static final String SERVICE_METHOD_CREATE = "srvcMethodCreate";
+	public static final String SERVICE_METHOD_CREATE_ALL = "srvcMethodCreateAll";
 	
 	
 	

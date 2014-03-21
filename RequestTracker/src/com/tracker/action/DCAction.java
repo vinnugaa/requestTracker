@@ -39,31 +39,29 @@ public class DCAction {
 	BusinessDelegate bd = new BusinessDelegate();
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpSession session = request.getSession();
+	DataResult<String> dataResult = null;
 	
+	public String getEach(DC dc){
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_DC, AllConstants.SERVICE_METHOD_EACH, Utility.getInstance().toJson(dc));
+		dataResult = bd.doTask();
+		return dataResult.data;
+	}
 	public boolean add(DC dc){
-		DataResult<String> dataResult = null;
-		
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_DC, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(dc));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public boolean delete(DC dc){
-		DataResult<String> dataResult = null;
-		
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_DC, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(dc));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public boolean update(DC dc){
-		DataResult<String> dataResult = null;
-		
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_DC, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(dc));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public String getAll(){
-		DataResult<String> dataResult = null;
-		
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_DC, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
 		dataResult = bd.doTask();
 		return dataResult.data;

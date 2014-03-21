@@ -9,10 +9,12 @@ import com.tracker.model.GenericModel;
 
 public class GenericModelDAO {
 
+	DatabaseTablesDAO dbtablesDAO = new DatabaseTablesDAO();
+	
 	public GenericModel getModel(GenericModel model, String tableName){
 		GenericModel resultModel = null;
 		try {
-			if(!DBUtils.getInstance().getAllTables().contains(tableName)) { System.out.println("TABLE NOT PRESENT " + tableName); return null;}
+			if(!dbtablesDAO.getAllTables().contains(tableName)) { System.out.println("TABLE NOT PRESENT " + tableName); return null;}
 			String command = "SELECT * FROM " + tableName 
 					+ " WHERE " + AllConstants.ID + "='" + model.getId() + "'";
 			ResultSet rs = DBUtils.getInstance().query(command);
@@ -60,7 +62,7 @@ public class GenericModelDAO {
 		List<GenericModel> allModel = null;
 		GenericModel resultModel = null;
 		try {
-			if(!DBUtils.getInstance().getAllTables().contains(tableName)) { System.out.println("TABLE NOT PRESENT " + tableName); return null;}
+			if(!dbtablesDAO.getAllTables().contains(tableName)) { System.out.println("TABLE NOT PRESENT " + tableName); return null;}
 			String command = "SELECT * FROM " + tableName 
 					+ " WHERE " + AllConstants.ID + "='" + model.getId() + "'";
 			ResultSet rs = DBUtils.getInstance().query(command);

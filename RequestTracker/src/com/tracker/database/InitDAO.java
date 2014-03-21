@@ -26,14 +26,15 @@ public class InitDAO {
 		tableMap.put(AllConstants.DATABASE_TABLE_WORL_LOG , " ( id VARCHAR(10) IDENTITY, request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )");
 		
 		try {
-			existingTables = DBUtils.getInstance().getAllTables();
+			DatabaseTablesDAO dbTablesDAO = new DatabaseTablesDAO();
+			existingTables = dbTablesDAO.getAllTables();
 			
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 	}
-	public void createTable(String tableName){
+	/*public void createTable(String tableName){
 		String command="";
 		try{
 			
@@ -54,8 +55,8 @@ public class InitDAO {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-	}
-	public void purgeTable(String tableName){
+	}*/
+	/*public void purgeTable(String tableName){
 		String command="";
 		try{
 			if(tableMap.get(tableName)!=null){
@@ -73,12 +74,12 @@ public class InitDAO {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	/* 
 	 * USE THIS UNLESS YOU MODIFY THE STRUCTURE OF THE TABLE / ATTRIBUTES
 	 */
-	public void removeTable(String tableName){
+	/*public void removeTable(String tableName){
 		String command="";
 		try {
 			if(!existingTables.contains(tableName)) { System.out.println("TABLE " + tableName + " Already removed");return; }
@@ -99,7 +100,7 @@ public class InitDAO {
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 	
 	/*
 	public void createUserTable(){
