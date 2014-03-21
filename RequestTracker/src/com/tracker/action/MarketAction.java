@@ -9,14 +9,15 @@ import org.apache.struts2.ServletActionContext;
 
 import com.tracker.constants.AllConstants;
 import com.tracker.data.DataResult;
-import com.tracker.delegate.BusinessDelegate;
-import com.tracker.model.DC;
+
+
+import com.tracker.model.GenericModel;
 import com.tracker.utils.Utility;
 
 public class MarketAction {
 	
 	private String id;
-	private String countryName;
+	private String name;
 	
 	public String getId() {
 		return id;
@@ -24,11 +25,11 @@ public class MarketAction {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getcountryName() {
-		return countryName;
+	public String getName() {
+		return name;
 	}
-	public void setcountryName(String countryName) {
-		this.countryName = countryName;
+	public void setname(String name) {
+		this.name = name;
 	}
 
 	
@@ -37,25 +38,25 @@ public class MarketAction {
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpSession session = request.getSession();
 	
-	public boolean add(Market countryName){
+	public boolean add(GenericModel country){
 		DataResult<String> dataResult = null;
 		
-		bd.setServiceInput(AllConstants.SERVICE_MAIN_MARKET, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(dc));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_MARKET, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(country));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
-	public boolean delete(Market countryName){
+	public boolean delete(GenericModel country){
 		DataResult<String> dataResult = null;
 		
-		bd.setServiceInput(AllConstants.SERVICE_MAIN_MARKET, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(dc));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_MARKET, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(country));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	
-	public boolean update(Market countryName){
+	public boolean update(GenericModel country){
 		DataResult<String> dataResult = null;
 		
-		bd.setServiceInput(AllConstants.SERVICE_MAIN_MARKET, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(dc));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_MARKET, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(country));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
