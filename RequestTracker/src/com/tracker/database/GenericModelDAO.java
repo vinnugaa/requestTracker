@@ -11,7 +11,7 @@ public class GenericModelDAO {
 
 	DatabaseTablesDAO dbtablesDAO = new DatabaseTablesDAO();
 	
-	public GenericModel getModel(GenericModel model, String tableName){
+	public GenericModel getEach(GenericModel model, String tableName){
 		GenericModel resultModel = null;
 		try {
 			if(!dbtablesDAO.getAllTables().contains(tableName)) { System.out.println("TABLE NOT PRESENT " + tableName); return null;}
@@ -31,7 +31,7 @@ public class GenericModelDAO {
 		return resultModel;
 	}
 	
-	public void addModel(GenericModel model, String tableName){
+	public void add(GenericModel model, String tableName){
 		try {
 			String command = "INSERT INTO " + tableName + " VALUES ( '"
 					+ model.getId() + "', "
@@ -45,7 +45,7 @@ public class GenericModelDAO {
 		}
 	}
 	
-	public void updateModel(GenericModel model, String tableName){
+	public void update(GenericModel model, String tableName){
 		try {
 			String command = "UPDATE " + tableName + " SET "
 					+ AllConstants.NAME + "='" + model.getName() + "' "
@@ -58,13 +58,12 @@ public class GenericModelDAO {
 		}
 	}
 	
-	public List<GenericModel> getAllModel(GenericModel model, String tableName){
+	public List<GenericModel> getAll(String tableName){
 		List<GenericModel> allModel = null;
 		GenericModel resultModel = null;
 		try {
 			if(!dbtablesDAO.getAllTables().contains(tableName)) { System.out.println("TABLE NOT PRESENT " + tableName); return null;}
-			String command = "SELECT * FROM " + tableName 
-					+ " WHERE " + AllConstants.ID + "='" + model.getId() + "'";
+			String command = "SELECT * FROM " + tableName;
 			ResultSet rs = DBUtils.getInstance().query(command);
 			allModel = new ArrayList<GenericModel>();
 			
@@ -81,7 +80,7 @@ public class GenericModelDAO {
 		return allModel;
 	}
 	
-	public void deleteModel(GenericModel model, String tableName){
+	public void delete(GenericModel model, String tableName){
 		try {
 			String command= "DELETE FROM "+ tableName
 					+ " WHERE " + AllConstants.ID + "='"+model.getId()+"'";

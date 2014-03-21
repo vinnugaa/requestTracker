@@ -41,6 +41,7 @@ public class AllConstants {
 	public static final String SERVICE_MAIN_USER = "srvcUser";
 	public static final String SERVICE_MAIN_DC = "srvcDC";
 	public static final String SERVICE_MAIN_TABLES = "srvcTables";
+	public static final String SERVICE_MAIN_MARKET = "srvcMarket";
 	
 	public static final String SERVICE_METHOD_VALIDATE = "srvcValidate";
 	
@@ -60,5 +61,7 @@ public class AllConstants {
 	//CACHE KEYS
 	public static final String CACHE_USER_ALL = "cacheUserAll";
 	public static final String CACHE_DC_ALL = "cacheDCAll";
+
+	public static final String CACHE_MARKET_ALL = "cacheMarketAll";
 	
 }
