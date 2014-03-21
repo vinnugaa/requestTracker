@@ -18,6 +18,16 @@ public class AllConstants {
 	public static final String DATABASE_TABLE_METOOL_STATUS = DATABASE_TABLE_PREFIX+ "tblMEToolStatus";
 	public static final String DATABASE_TABLE_WORL_LOG = DATABASE_TABLE_PREFIX+ "tblWorkLog";
 	
+	public static final String DATABASE_TABLE_USER_DESCRIPTION = " ( userid VARCHAR IDENTITY, name VARCHAR(50), role VARCHAR(20), password VARCHAR(20) )";
+	public static final String DATABASE_TABLE_REQUEST_TYPE_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
+	public static final String DATABASE_TABLE_MARKET_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
+	public static final String DATABASE_TABLE_BU_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
+	public static final String DATABASE_TABLE_PROJECT_ID_DESCRIPTION = " ( id VARCHAR(10), description VARCHAR(100), active BOOLEAN, PRIMARY KEY(id) )";
+	public static final String DATABASE_TABLE_IMPACTED_APP_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
+	public static final String DATABASE_TABLE_REQUEST_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
+	public static final String DATABASE_TABLE_METOOL_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
+	public static final String DATABASE_TABLE_WORL_LOG_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )";
+	
 	public static final String USERID = "userid";
 	public static final String ID = "id";
 	public static final String NAME = "name";
