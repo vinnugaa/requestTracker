@@ -28,7 +28,13 @@ public class AllConstants {
 	public static final String DATABASE_TABLE_REQUEST_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
 	public static final String DATABASE_TABLE_METOOL_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
 	public static final String DATABASE_TABLE_WORL_LOG_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )";
-	public static final String DATABASE_TABLE_SITE_ENHANCE_DESCRIPTION = " ( id VARCHAR(10), submitted_date )";
+	public static final String DATABASE_TABLE_SITE_ENHANCE_DESCRIPTION = " ( id VARCHAR(10), requestor VARCHAR(50), submitted_date DATE, " +
+			"expected_date DATE, actual_date DATE, hours DOUBLE, month INTEGER, projectId INTEGER, actual_resource INTEGER ARRAY[2], me_tool_resource INTEGER, " +
+			"actual_status INTEGER, me_tool_status INTEGER, impact_application INTEGER, change_type INTEGER ARRAY[5], bu INTEGER, country INTEGER ARRAY[5], " +
+			"work_log INTEGER, urgent BOOLEAN )";
+	
+	public static final String DATE_FORMAT = "MM/dd/yyyy";
+	public static final String DELIMITER = "|";
 	
 	public static final String USERID = "userid";
 	public static final String ID = "id";
@@ -38,6 +44,24 @@ public class AllConstants {
 	public static final String PROJECT_ID = "projectId";
 	public static final String DESCRIPTION = "description";
 	public static final String ACTIVE = "active";
+	
+	public static final String REQUESTOR = "requestor";
+	public static final String SUBMITTED_DATE = "submittedDate";
+	public static final String EXPECTED_DATE = "expectedDate";
+	public static final String ACTUAL_DATE = "actualDate";
+	public static final String HOURS = "hours";
+	public static final String MONTH = "month";
+	public static final String ACTUAL_RESOURCE = "actualResource";
+	public static final String METOOL_RESOURCE = "meToolResource";
+	public static final String ACTUAL_STATUS = "actualStatus";
+	public static final String METOOL_STATUS = "meToolStatus";
+	public static final String IMPACTED_APPLICATION = "impactApplication";
+	public static final String CHANGE_TYPE = "changeType";
+	public static final String BU = "bu";
+	public static final String WORKLOG = "worklog";
+	public static final String URGENT = "urgent";
+	public static final String COUNTRY = "country";
+	
 	
 	//SERVICE LOOKUPS
 	public static final String SERVICE_MAIN_USER = "srvcUser";
@@ -59,11 +83,10 @@ public class AllConstants {
 	public static final String SERVICE_METHOD_CREATE = "srvcMethodCreate";
 	public static final String SERVICE_METHOD_CREATE_ALL = "srvcMethodCreateAll";
 	
-	
-	
 	//CACHE KEYS
 	public static final String CACHE_USER_ALL = "cacheUserAll";
 	public static final String CACHE_DC_ALL = "cacheDCAll";
 	public static final String CACHE_MARKET_ALL = "cacheMarketAll";
+	public static final String CACHE_SITE_ENHANCE = "cacheSiteEnhanceAll";
 	
 }
