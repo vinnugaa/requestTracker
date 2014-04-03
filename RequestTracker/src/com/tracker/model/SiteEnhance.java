@@ -1,26 +1,24 @@
 package com.tracker.model;
 
-import java.util.Date;
-import java.util.List;
 
 public class SiteEnhance {
 
 	private String id;
-	private Date submittedDate;
 	private String requestor;
-	private Date expectedDate;
-	private Date actualDate;
-	private float hours;
+	private String submittedDate;
+	private String expectedDate;
+	private String actualDate;
+	private double hours;
 	private int month;
 	private int projectId;
-	private List<Integer> actualResource;
+	private String actualResource; // Actually its a List<Integer>
 	private int meToolResource;
 	private int actualStatus;
 	private int meToolStatus;
 	private int impactApplication;
-	private List<Integer> changeType;
+	private String changeType;  // Actually its a List<Integer>
 	private int bu;
-	private List<Integer> country;
+	private String country;  // Actually its a List<Integer>
 	private int worklog;
 	private boolean urgent;
 	public String getId() {
@@ -29,38 +27,38 @@ public class SiteEnhance {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Date getSubmittedDate() {
-		return submittedDate;
-	}
-	public void setSubmittedDate(Date submittedDate) {
-		this.submittedDate = submittedDate;
-	}
-	public String getRequestor() {
+		public String getRequestor() {
 		return requestor;
 	}
 	public void setRequestor(String requestor) {
 		this.requestor = requestor;
 	}
-	public Date getExpectedDate() {
-		return expectedDate;
-	}
-	public void setExpectedDate(Date expectedDate) {
-		this.expectedDate = expectedDate;
-	}
-	public Date getActualDate() {
-		return actualDate;
-	}
-	public void setActualDate(Date actualDate) {
-		this.actualDate = actualDate;
-	}
-	public float getHours() {
-		return hours;
-	}
-	public void setHours(float hours) {
-		this.hours = hours;
-	}
 	public int getMonth() {
 		return month;
+	}
+	public String getSubmittedDate() {
+		return submittedDate;
+	}
+	public void setSubmittedDate(String submittedDate) {
+		this.submittedDate = submittedDate;
+	}
+	public String getExpectedDate() {
+		return expectedDate;
+	}
+	public void setExpectedDate(String expectedDate) {
+		this.expectedDate = expectedDate;
+	}
+	public String getActualDate() {
+		return actualDate;
+	}
+	public void setActualDate(String actualDate) {
+		this.actualDate = actualDate;
+	}
+	public double getHours() {
+		return hours;
+	}
+	public void setHours(double hours) {
+		this.hours = hours;
 	}
 	public void setMonth(int month) {
 		this.month = month;
@@ -70,12 +68,6 @@ public class SiteEnhance {
 	}
 	public void setProjectId(int projectId) {
 		this.projectId = projectId;
-	}
-	public List<Integer> getActualResource() {
-		return actualResource;
-	}
-	public void setActualResource(List<Integer> actualResource) {
-		this.actualResource = actualResource;
 	}
 	public int getMeToolResource() {
 		return meToolResource;
@@ -101,23 +93,11 @@ public class SiteEnhance {
 	public void setImpactApplication(int impactApplication) {
 		this.impactApplication = impactApplication;
 	}
-	public List<Integer> getChangeType() {
-		return changeType;
-	}
-	public void setChangeType(List<Integer> changeType) {
-		this.changeType = changeType;
-	}
 	public int getBu() {
 		return bu;
 	}
 	public void setBu(int bu) {
 		this.bu = bu;
-	}
-	public List<Integer> getCountry() {
-		return country;
-	}
-	public void setCountry(List<Integer> country) {
-		this.country = country;
 	}
 	public int getWorklog() {
 		return worklog;
@@ -130,6 +110,24 @@ public class SiteEnhance {
 	}
 	public void setUrgent(boolean urgent) {
 		this.urgent = urgent;
+	}
+	public String getActualResource() {
+		return actualResource;
+	}
+	public void setActualResource(String actualResource) {
+		this.actualResource = actualResource;
+	}
+	public String getChangeType() {
+		return changeType;
+	}
+	public void setChangeType(String changeType) {
+		this.changeType = changeType;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	
 	

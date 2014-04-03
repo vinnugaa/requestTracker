@@ -16,7 +16,7 @@ public class SiteEnhanceDAO {
 
 	public void add(SiteEnhance siteEnhance){
 	
-		try{ 
+		try{
 			Connection conn = DBUtils.getInstance().connect();
 			String command = "INSERT INTO "+ AllConstants.DATABASE_TABLE_SITE_ENHANCE
 					+ " VALUES ( "+

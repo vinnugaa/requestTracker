@@ -30,6 +30,9 @@ public class DBUtils {
 	}
 	public void update(String command) throws SQLException, ClassNotFoundException{
 		Connection conn = connect();
+		update(command,conn);
+	}
+	public void update(String command, Connection conn) throws SQLException, ClassNotFoundException{
 		Statement st=null;
 		st = conn.createStatement();
 		System.out.println("command:: "+command);
