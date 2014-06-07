@@ -19,15 +19,15 @@ public class AllConstants {
 	public static final String DATABASE_TABLE_WORL_LOG = DATABASE_TABLE_PREFIX+ "tblWorkLog";
 	public static final String DATABASE_TABLE_SITE_ENHANCE = DATABASE_TABLE_PREFIX+ "tblSiteEnhance";
 	
-	public static final String DATABASE_TABLE_USER_DESCRIPTION = " ( userid VARCHAR(10), name VARCHAR(50), role VARCHAR(20), password VARCHAR(20) )";
-	public static final String DATABASE_TABLE_REQUEST_TYPE_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
-	public static final String DATABASE_TABLE_MARKET_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
-	public static final String DATABASE_TABLE_BU_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
+	public static final String DATABASE_TABLE_USER_DESCRIPTION = " ( userid VARCHAR(10), name VARCHAR(50), role VARCHAR(20), password VARCHAR(20) )"; //Generic Model
+	public static final String DATABASE_TABLE_REQUEST_TYPE_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
+	public static final String DATABASE_TABLE_MARKET_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
+	public static final String DATABASE_TABLE_BU_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
 	public static final String DATABASE_TABLE_PROJECT_ID_DESCRIPTION = " ( id VARCHAR(10), description VARCHAR(100), active BOOLEAN, PRIMARY KEY(id) )";
-	public static final String DATABASE_TABLE_IMPACTED_APP_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
-	public static final String DATABASE_TABLE_REQUEST_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
-	public static final String DATABASE_TABLE_METOOL_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
-	public static final String DATABASE_TABLE_WORL_LOG_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )";
+	public static final String DATABASE_TABLE_IMPACTED_APP_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
+	public static final String DATABASE_TABLE_REQUEST_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
+	public static final String DATABASE_TABLE_METOOL_STATUS_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
+	public static final String DATABASE_TABLE_WORK_LOG_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )";
 	public static final String DATABASE_TABLE_SITE_ENHANCE_DESCRIPTION = " ( id VARCHAR(10), requestor VARCHAR(50), submitted_date DATE, " +
 			"expected_date DATE, actual_date DATE, hours DOUBLE, month INTEGER, projectId INTEGER, actual_resource INTEGER ARRAY[2], me_tool_resource INTEGER, " +
 			"actual_status INTEGER, me_tool_status INTEGER, impact_application INTEGER, change_type INTEGER ARRAY[5], bu INTEGER, country INTEGER ARRAY[5], " +
@@ -68,6 +68,7 @@ public class AllConstants {
 	public static final String SERVICE_MAIN_DC = "srvcDC";
 	public static final String SERVICE_MAIN_TABLES = "srvcTables";
 	public static final String SERVICE_MAIN_MARKET = "srvcMarket";
+	public static final String SERVICE_WORK_LOG = "srvcWorkLog";
 	public static final String SERVICE_MAIN_SITE_ENHANCER = "srvcSiteEnhancer";
 	
 	public static final String SERVICE_METHOD_VALIDATE = "srvcValidate";
