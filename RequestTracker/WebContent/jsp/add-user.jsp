@@ -8,7 +8,7 @@
 <body>
 <h2>ADD USER</h2>
 <s:actionerror />
-<s:form action="adduser.action" method="post">
+<s:form action="add-user" method="post">
     <s:textfield name="name" key="label.name" size="20" />
     <s:textfield name="password" key="label.password" size="20" />
     <s:textfield name="role" key="label.role" size="20" />

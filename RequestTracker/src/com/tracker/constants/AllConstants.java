@@ -19,7 +19,7 @@ public class AllConstants {
 	public static final String DATABASE_TABLE_WORL_LOG = DATABASE_TABLE_PREFIX+ "tblWorkLog";
 	public static final String DATABASE_TABLE_SITE_ENHANCE = DATABASE_TABLE_PREFIX+ "tblSiteEnhance";
 	
-	public static final String DATABASE_TABLE_USER_DESCRIPTION = " ( userid VARCHAR IDENTITY, name VARCHAR(50), role VARCHAR(20), password VARCHAR(20) )";
+	public static final String DATABASE_TABLE_USER_DESCRIPTION = " ( userid VARCHAR(10), name VARCHAR(50), role VARCHAR(20), password VARCHAR(20) )";
 	public static final String DATABASE_TABLE_REQUEST_TYPE_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
 	public static final String DATABASE_TABLE_MARKET_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";
 	public static final String DATABASE_TABLE_BU_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )";

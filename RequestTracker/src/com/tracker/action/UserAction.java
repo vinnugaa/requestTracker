@@ -31,7 +31,7 @@ public class UserAction {
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpSession session = request.getSession();
 	
-	public boolean add(){
+	public String add(){
 		DataResult<String> dataResult = null;
 		User user = new User();
 		user.setUserid(getUserid());
@@ -40,10 +40,10 @@ public class UserAction {
 		user.setPassword(getPassword());
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(user));
 		dataResult = bd.doTask();
-		return dataResult.isSuccess;
+		return getResult(dataResult.isSuccess);
 	}
 	
-	public boolean delete(){
+	public String delete(){
 		DataResult<String> dataResult = null;
 		User user = new User();
 		user.setUserid(getUserid());
@@ -52,10 +52,10 @@ public class UserAction {
 		user.setPassword(getPassword());*/
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(user));
 		dataResult = bd.doTask();
-		return dataResult.isSuccess;
+		return getResult(dataResult.isSuccess);
 	}
 	
-	public boolean update(){
+	public String update(){
 		DataResult<String> dataResult = null;
 		User user = new User();
 		user.setUserid(getUserid());
@@ -64,7 +64,7 @@ public class UserAction {
 		user.setPassword(getPassword());
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(user));
 		dataResult = bd.doTask();
-		return dataResult.isSuccess;
+		return getResult(dataResult.isSuccess);
 	}
 	
 	public String getAll(){
@@ -76,7 +76,16 @@ public class UserAction {
 		user.setPassword(getPassword());*/
 		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
 		dataResult = bd.doTask();
-		return dataResult.data;
+		System.out.println("dataResult.data:: "+ dataResult.data);
+		// TODO:: Uncomment the below statement
+		//return dataResult.data;
+		return "success";
+	}
+	
+	public String getResult(boolean result){
+		String res = "failure";
+		if(result) return "success";
+		return res;
 	}
 
 	public String getUserid() {

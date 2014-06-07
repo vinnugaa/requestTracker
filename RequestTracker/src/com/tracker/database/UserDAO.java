@@ -35,8 +35,8 @@ public class UserDAO {
 		try{
 			//update("INSERT INTO " + tableName + "(name,password) VALUES('"+ username + "','"+ password + "')");
 			String command = "INSERT INTO "+ AllConstants.DATABASE_TABLE_USER 
-					+ " VALUES ( " 
-					+ user.getUserid() + ",'"
+					+ " VALUES ( '" 
+					+ user.getUserid() + "','"
 					+ user.getName() + "','"
 					+ user.getRole() +  "','"
 					+ user.getPassword()
