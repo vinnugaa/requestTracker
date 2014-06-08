@@ -42,6 +42,9 @@ public class AllConstants {
 	public static final String ROLE = "role";
 	public static final String PASSWORD = "password";
 	public static final String PROJECT_ID = "projectId";
+	public static final String REQUEST_ID = "requestId";
+	public static final String DATE = "date";
+	public static final String LOG = "log";
 	public static final String DESCRIPTION = "description";
 	public static final String ACTIVE = "active";
 	

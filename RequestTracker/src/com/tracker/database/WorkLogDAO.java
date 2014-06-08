@@ -52,8 +52,9 @@ public class WorkLogDAO {
 	public void update(WorkLog workLog, String tableName){
 		try {
 			String command = "UPDATE " + tableName + " SET "
-					+ AllConstants.REQUEST_ID + "='" + workLog.getRequestId() + "' "
-					+ AllConstants.DATE + "='" + workLog.getDate() + "' "
+					+ AllConstants.REQUEST_ID + "='" + workLog.getRequestId() + "', "
+					+ AllConstants.DATE + "='" + workLog.getDate() + "', "
+					+ AllConstants.LOG + "='" + workLog.getLog() + "', "
 					+ " WHERE " + AllConstants.ID + "='" +workLog.getId() + "'";
 			System.out.println(command);
 			DBUtils.getInstance().update(command);
