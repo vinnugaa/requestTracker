@@ -70,6 +70,7 @@ public class AllConstants {
 	public static final String SERVICE_MAIN_MARKET = "srvcMarket";
 	public static final String SERVICE_WORK_LOG = "srvcWorkLog";
 	public static final String SERVICE_MAIN_SITE_ENHANCER = "srvcSiteEnhancer";
+	public static final String SERVICE_REQUESTTYPE = "srvcRequestType";
 	
 	public static final String SERVICE_METHOD_VALIDATE = "srvcValidate";
 	
@@ -89,5 +90,6 @@ public class AllConstants {
 	public static final String CACHE_DC_ALL = "cacheDCAll";
 	public static final String CACHE_MARKET_ALL = "cacheMarketAll";
 	public static final String CACHE_SITE_ENHANCE = "cacheSiteEnhanceAll";
+	public static final String CACHE_RequestStatus_ALL = "cacheRequestStatusAll";
 	
 }
