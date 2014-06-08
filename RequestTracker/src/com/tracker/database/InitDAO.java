@@ -23,7 +23,7 @@ public class InitDAO {
 		tableMap.put(AllConstants.DATABASE_TABLE_IMPACTED_APP , " ( id VARCHAR(10) IDENTITY, name VARCHAR(50) )");
 		tableMap.put(AllConstants.DATABASE_TABLE_REQUEST_STATUS , " ( id VARCHAR(10) IDENTITY, name VARCHAR(50) )");
 		tableMap.put(AllConstants.DATABASE_TABLE_METOOL_STATUS , " ( id VARCHAR(10) IDENTITY, name VARCHAR(50) )");
-		tableMap.put(AllConstants.DATABASE_TABLE_WORL_LOG , " ( id VARCHAR(10) IDENTITY, request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )");
+		tableMap.put(AllConstants.DATABASE_TABLE_WORK_LOG , " ( id VARCHAR(10) IDENTITY, request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )");
 		
 		try {
 			DatabaseTablesDAO dbTablesDAO = new DatabaseTablesDAO();

@@ -30,7 +30,7 @@ public class WorkLogAction {
 		workLog.setLog(getLog());
 		workLog.setRequestId(getRequestId());
 		
-		bd.setServiceInput(AllConstants.SERVICE_WORK_LOG, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(workLog));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_WORK_LOG, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(workLog));
 		dataResult = bd.doTask();
 		return getResult(dataResult.isSuccess);
 	}
@@ -47,7 +47,7 @@ public class WorkLogAction {
 		/*user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput(AllConstants.SERVICE_WORK_LOG, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(workLog));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_WORK_LOG, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(workLog));
 		dataResult = bd.doTask();
 		return getResult(dataResult.isSuccess);
 	}
@@ -64,7 +64,7 @@ public class WorkLogAction {
 		user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput(AllConstants.SERVICE_WORK_LOG, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(workLog));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_WORK_LOG, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(workLog));
 		dataResult = bd.doTask();
 		return getResult(dataResult.isSuccess);
 	}
@@ -81,7 +81,7 @@ public class WorkLogAction {
 		user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput(AllConstants.SERVICE_WORK_LOG, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_WORK_LOG, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
 		dataResult = bd.doTask();
 		System.out.println("dataResult.data:: "+ dataResult.data);
 		// TODO:: Uncomment the below statement

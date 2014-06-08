@@ -3,7 +3,6 @@ package com.tracker.service;
 import java.util.List;
 
 import com.google.gson.Gson;
-import com.tracker.cache.TrackerCache;
 import com.tracker.constants.AllConstants;
 import com.tracker.data.DataResult;
 import com.tracker.database.GenericModelDAO;
@@ -25,10 +24,18 @@ public class GenericModelService extends BusinessService {
 		 * 		MAP all the database tables with the services
 		 */
 		
-		if(method.equalsIgnoreCase(AllConstants.SERVICE_MAIN_MARKET))
-			dbTableName = AllConstants.DATABASE_TABLE_MARKET;
+		if(method.equalsIgnoreCase(AllConstants.SERVICE_MAIN_REQUEST_TYPE))
+			dbTableName = AllConstants.DATABASE_TABLE_REQUEST_TYPE;
 		else if(method.equalsIgnoreCase(AllConstants.SERVICE_MAIN_MARKET))
-			dbTableName ="";
+			dbTableName = AllConstants.DATABASE_TABLE_MARKET;
+		else if(method.equalsIgnoreCase(AllConstants.SERVICE_MAIN_BU))
+			dbTableName = AllConstants.DATABASE_TABLE_BU;
+		else if(method.equalsIgnoreCase(AllConstants.SERVICE_MAIN_IMPACTED_APP))
+			dbTableName = AllConstants.DATABASE_TABLE_IMPACTED_APP;
+		else if(method.equalsIgnoreCase(AllConstants.SERVICE_MAIN_REQUEST_STATUS))
+			dbTableName = AllConstants.DATABASE_TABLE_REQUEST_STATUS;
+		else if(method.equalsIgnoreCase(AllConstants.SERVICE_MAIN_ME_TOOL_STATUS))
+			dbTableName = AllConstants.DATABASE_TABLE_METOOL_STATUS;
 		
 		return result;
 	}
@@ -36,63 +43,51 @@ public class GenericModelService extends BusinessService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public DataResult<String> doProcessing() {
-		
-		
-		
 		DataResult<String> dataResult= null;
-		GenericModel srcGenericModel=null;
-		List<GenericModel> allGenericModels = null;
+		GenericModel model=null;
+		List<GenericModel> allModels = null;
 		GenericModelDAO genericModelDAO = new GenericModelDAO();
 		
-		srcGenericModel = (GenericModel)(new Gson()).fromJson(inputJson, GenericModel.class);
-		String dabaseTableName = getDBTable(srcGenericModel.getType());
+		model = (GenericModel)(new Gson()).fromJson(inputJson, GenericModel.class);
+		String dbTableName = getDBTable(model.getType());
 		
-		/* TODO ::
-		 * Check if there is any necessary to get each country, as the
-		 * list of countries is very minimum 
-		 */
-		
-		/*if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_EACH)){
-			destcountryName =  genericModelDAO.getEach(srcGenericModel);
-			if(destcountryName != null){
-				dataResult = new DataResult<String>();
-				dataResult.isSuccess=true;
-				dataResult.data = Utility.getInstance().toJson(destcountryName);
+		if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_EACH)){
+			model = (GenericModel)trackerCache.getObject(AllConstants.CACHE_GENERIC_MODEL + model.getId());
+			if (!(model !=null)){
+				model =  genericModelDAO.getEach(model, dbTableName);
 			}
-		}else*/
-			
-		if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ADD)){
-			genericModelDAO.add(srcGenericModel, dabaseTableName);
 			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
-			//dataResult.data = Utility.getInstance().toJson(destcountryName);
-			
+			dataResult.data = Utility.getInstance().toJson(model);
+		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ADD)){
+			genericModelDAO.add(model, dbTableName);
+			trackerCache.addObject(AllConstants.CACHE_GENERIC_MODEL+model.getId(), model);
+			dataResult = new DataResult<String>();
+			dataResult.isSuccess=true;
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_DELETE)){
-			genericModelDAO.delete(srcGenericModel,dabaseTableName);
+			genericModelDAO.delete(model,dbTableName);
+			trackerCache.removeObject(AllConstants.CACHE_GENERIC_MODEL+model.getId());
 			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
-			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_UPDATE)){
-			genericModelDAO.update(srcGenericModel,dabaseTableName);
+			genericModelDAO.update(model,dbTableName);
+			trackerCache.addObject(AllConstants.CACHE_GENERIC_MODEL+model.getId(), model);
 			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
-			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ALL)){
 			//CHECK THE CACHE FIRST
 			/* TODO
 			 * 		I don't know if I can use (!(variable != null)), but for sure should not use (variable == null)
 			 */
-			allGenericModels = (List<GenericModel>)TrackerCache.getInstance().getObject(AllConstants.CACHE_MARKET_ALL);
-			if (! (allGenericModels != null)) {
-				allGenericModels = genericModelDAO.getAll(dabaseTableName);
-				TrackerCache.getInstance().addObject(AllConstants.CACHE_MARKET_ALL,allGenericModels);
+			allModels = (List<GenericModel>)trackerCache.getObject(AllConstants.CACHE_GENERIC_MODEL+AllConstants.CACHE_ALL);
+			if (! (allModels != null)) {
+				allModels = genericModelDAO.getAll(dbTableName);
+				trackerCache.addObject(AllConstants.CACHE_GENERIC_MODEL+AllConstants.CACHE_ALL,allModels);
 			}
 			dataResult = new DataResult<String>();
-			dataResult.data = Utility.getInstance().toJson(allGenericModels);
+			dataResult.data = Utility.getInstance().toJson(allModels);
 			dataResult.isSuccess=true;
-			
 		}
-		
 		return dataResult;
 	}
 

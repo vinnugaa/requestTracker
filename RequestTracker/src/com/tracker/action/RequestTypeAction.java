@@ -37,14 +37,14 @@ public class RequestTypeAction {
 	public boolean add(GenericModel requestType){
 		DataResult<String> dataResult = null;
 		
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_TYPE, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(requestType));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_TYPE, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(requestType));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public boolean delete(GenericModel requestType){
 		DataResult<String> dataResult = null;
 		
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_TYPE, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(requestType));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_TYPE, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(requestType));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
@@ -52,14 +52,14 @@ public class RequestTypeAction {
 	public boolean update(GenericModel requestType){
 		DataResult<String> dataResult = null;
 		
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_TYPE, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(requestType));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_TYPE, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(requestType));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public String getAll(){
 		DataResult<String> dataResult = null;
 		
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_TYPE, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_TYPE, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
 		dataResult = bd.doTask();
 		return dataResult.data;
 	}

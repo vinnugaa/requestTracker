@@ -43,27 +43,27 @@ public class RequestStatusAction {
 	DataResult<String> dataResult = null;
 	
 	public String getEach(RequestStatus requestStatus){
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_STATUS, AllConstants.SERVICE_METHOD_EACH, Utility.getInstance().toJson(requestStatus));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_STATUS, AllConstants.SERVICE_METHOD_EACH, Utility.getInstance().toJson(requestStatus));
 		dataResult = bd.doTask();
 		return dataResult.data;
 	}
 	public boolean add(RequestStatus requestStatus){
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_STATUS, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(requestStatus));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_STATUS, AllConstants.SERVICE_METHOD_ADD, Utility.getInstance().toJson(requestStatus));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public boolean delete(RequestStatus requestStatus){
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_STATUS, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(requestStatus));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_STATUS, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(requestStatus));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public boolean update(RequestStatus requestStatus){
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_STATUS, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(requestStatus));
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_STATUS, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(requestStatus));
 		dataResult = bd.doTask();
 		return dataResult.isSuccess;
 	}
 	public String getAll(){
-		bd.setServiceInput(AllConstants.SERVICE_REQUEST_STATUS, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
+		bd.setServiceInput(AllConstants.SERVICE_MAIN_REQUEST_STATUS, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
 		dataResult = bd.doTask();
 		return dataResult.data;
 	}

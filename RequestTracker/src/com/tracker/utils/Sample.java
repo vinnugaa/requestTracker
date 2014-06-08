@@ -22,10 +22,10 @@ public class Sample {
 		tableMap.put(AllConstants.DATABASE_TABLE_IMPACTED_APP , " ( id VARCHAR(10) IDENTITY, name VARCHAR(50) )");
 		tableMap.put(AllConstants.DATABASE_TABLE_REQUEST_STATUS , " ( id VARCHAR(10) IDENTITY, name VARCHAR(50) )");
 		tableMap.put(AllConstants.DATABASE_TABLE_METOOL_STATUS , " ( id VARCHAR(10) IDENTITY, name VARCHAR(50) )");
-		tableMap.put(AllConstants.DATABASE_TABLE_WORL_LOG , " ( id VARCHAR(10) IDENTITY, request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )");
-		System.out.println(tableMap.get(AllConstants.DATABASE_TABLE_WORL_LOG));
+		tableMap.put(AllConstants.DATABASE_TABLE_WORK_LOG , " ( id VARCHAR(10) IDENTITY, request_id VARCHAR(10), log_date DATE, log LONGVARCHAR )");
+		System.out.println(tableMap.get(AllConstants.DATABASE_TABLE_WORK_LOG));
 		System.out.println(tableMap.get("pramod"));
-		System.out.println(tableMap.get(AllConstants.DATABASE_TABLE_WORL_LOG));
+		System.out.println(tableMap.get(AllConstants.DATABASE_TABLE_WORK_LOG));
 		System.out.println("Testing");
 	}
 

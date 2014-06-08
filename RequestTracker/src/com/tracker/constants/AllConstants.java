@@ -16,10 +16,10 @@ public class AllConstants {
 	public static final String DATABASE_TABLE_IMPACTED_APP = DATABASE_TABLE_PREFIX + "tblImpactedApps";
 	public static final String DATABASE_TABLE_REQUEST_STATUS = DATABASE_TABLE_PREFIX + "tblRequestStatus";
 	public static final String DATABASE_TABLE_METOOL_STATUS = DATABASE_TABLE_PREFIX+ "tblMEToolStatus";
-	public static final String DATABASE_TABLE_WORL_LOG = DATABASE_TABLE_PREFIX+ "tblWorkLog";
+	public static final String DATABASE_TABLE_WORK_LOG = DATABASE_TABLE_PREFIX+ "tblWorkLog";
 	public static final String DATABASE_TABLE_SITE_ENHANCE = DATABASE_TABLE_PREFIX+ "tblSiteEnhance";
 	
-	public static final String DATABASE_TABLE_USER_DESCRIPTION = " ( userid VARCHAR(10), name VARCHAR(50), role VARCHAR(20), password VARCHAR(20) )"; //Generic Model
+	public static final String DATABASE_TABLE_USER_DESCRIPTION = " ( userid VARCHAR(10), name VARCHAR(50), role VARCHAR(20), password VARCHAR(20) )";
 	public static final String DATABASE_TABLE_REQUEST_TYPE_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
 	public static final String DATABASE_TABLE_MARKET_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
 	public static final String DATABASE_TABLE_BU_DESCRIPTION = " ( id INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 100), name VARCHAR(50) )"; //Generic Model
@@ -71,11 +71,16 @@ public class AllConstants {
 	public static final String SERVICE_MAIN_DC = "srvcDC";
 	public static final String SERVICE_MAIN_TABLES = "srvcTables";
 	public static final String SERVICE_MAIN_GENERIC = "srvcGeneric";
+	public static final String SERVICE_MAIN_REQUEST_TYPE = "srvcRequestType";
 	public static final String SERVICE_MAIN_MARKET = "srvcMarket";
-	public static final String SERVICE_WORK_LOG = "srvcWorkLog";
+	public static final String SERVICE_MAIN_BU = "srvcBU";
+	public static final String SERVICE_MAIN_PROJECT_ID = "srvcProjectID";
+	public static final String SERVICE_MAIN_IMPACTED_APP = "srvcImpactedApp";
+	public static final String SERVICE_MAIN_REQUEST_STATUS = "srvcRequestStatus";
+	public static final String SERVICE_MAIN_ME_TOOL_STATUS = "srvcMeToolStatus";
+	public static final String SERVICE_MAIN_WORK_LOG = "srvcWorkLog";
 	public static final String SERVICE_MAIN_SITE_ENHANCER = "srvcSiteEnhancer";
-	public static final String SERVICE_REQUEST_TYPE = "srvcRequestType";
-	public static final String SERVICE_REQUEST_STATUS = "srvcRequestStatus";
+	
 	
 	public static final String SERVICE_METHOD_VALIDATE = "srvcValidate";
 	
@@ -91,10 +96,14 @@ public class AllConstants {
 	public static final String SERVICE_METHOD_CREATE_ALL = "srvcMethodCreateAll";
 	
 	//CACHE KEYS
+	public static final String CACHE_ALL = "All";
+	
 	public static final String CACHE_USER_ALL = "cacheUserAll";
-	public static final String CACHE_DC_ALL = "cacheDCAll";
 	public static final String CACHE_MARKET_ALL = "cacheMarketAll";
 	public static final String CACHE_SITE_ENHANCE = "cacheSiteEnhanceAll";
 	public static final String CACHE_RequestStatus_ALL = "cacheRequestStatusAll";
 	
+	public static final String CACHE_DC = "cacheDC-";
+	public static final String CACHE_GENERIC_MODEL = "cacheGenericModel-";
+		
 }

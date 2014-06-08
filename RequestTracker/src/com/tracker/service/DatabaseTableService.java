@@ -27,7 +27,7 @@ public class DatabaseTableService extends BusinessService {
 		tableMap.put(AllConstants.DATABASE_TABLE_IMPACTED_APP , AllConstants.DATABASE_TABLE_IMPACTED_APP_DESCRIPTION);
 		tableMap.put(AllConstants.DATABASE_TABLE_REQUEST_STATUS , AllConstants.DATABASE_TABLE_REQUEST_STATUS_DESCRIPTION);
 		tableMap.put(AllConstants.DATABASE_TABLE_METOOL_STATUS , AllConstants.DATABASE_TABLE_METOOL_STATUS_DESCRIPTION);
-		tableMap.put(AllConstants.DATABASE_TABLE_WORL_LOG , AllConstants.DATABASE_TABLE_WORK_LOG_DESCRIPTION);
+		tableMap.put(AllConstants.DATABASE_TABLE_WORK_LOG , AllConstants.DATABASE_TABLE_WORK_LOG_DESCRIPTION);
 		try {
 			DatabaseTablesDAO dbTablesDAO = new DatabaseTablesDAO();
 			existingTables = dbTablesDAO.getAllTables();

@@ -25,11 +25,11 @@ public class BusinessLookUp {
 			businessService = new SiteEnhanceService(method, inputJson);
 		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_MARKET)){
 			businessService = new MarketService(method, inputJson);
-		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_WORK_LOG)){
+		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_WORK_LOG)){
 			businessService = new WorkLogService(method, inputJson);
-		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_REQUEST_TYPE)){
+		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_REQUEST_TYPE)){
 			businessService = new RequestStatusService(method, inputJson);
-		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_REQUEST_STATUS)){
+		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_REQUEST_STATUS)){
 			businessService = new MarketService(method, inputJson);
 		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_GENERIC)){
 			businessService = new MarketService(method, inputJson);

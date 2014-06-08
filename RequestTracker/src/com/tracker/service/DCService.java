@@ -17,45 +17,46 @@ public class DCService extends BusinessService{
 		super(method, inputJson);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public DataResult<String> doProcessing() {
-		DataResult<String> dataResult= new DataResult<String>();
-		DC srcDC=null, destDC=null;
+		DataResult<String> dataResult=null;
+		DC dc=null;
 		List<DC> allDC = null;
 		DcDAO dcDAO = new DcDAO();
 		
-		srcDC = (DC)(new Gson()).fromJson(inputJson, DC.class);
-		
+		dc = (DC)(new Gson()).fromJson(inputJson, DC.class);
 		if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_EACH)){
-			destDC =  dcDAO.getEach(srcDC);
-			if(destDC != null){
-				dataResult.isSuccess=true;
-				dataResult.data = Utility.getInstance().toJson(destDC);
+			dc = (DC)trackerCache.getObject(AllConstants.CACHE_DC+dc.getId());
+			if (!(dc !=null)){
+				dc =  dcDAO.getEach(dc);
 			}
+			dataResult= new DataResult<String>();
+			dataResult.isSuccess=true;
+			dataResult.data = Utility.getInstance().toJson(dc);
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ADD)){
-			dcDAO.add(srcDC);
+			dcDAO.add(dc);
+			trackerCache.addObject(AllConstants.CACHE_DC+dc.getId(), dc);
+			dataResult= new DataResult<String>();
 			dataResult.isSuccess=true;
-			//dataResult.data = Utility.getInstance().toJson(destUser);
-			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_DELETE)){
-			dcDAO.delete(srcDC);
+			dcDAO.delete(dc);
+			trackerCache.removeObject(dc.getId());
+			dataResult= new DataResult<String>();
 			dataResult.isSuccess=true;
-			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_UPDATE)){
-			dcDAO.update(srcDC);
+			dcDAO.update(dc);
+			trackerCache.addObject(AllConstants.CACHE_DC+dc.getId(), dc);
+			dataResult= new DataResult<String>();
 			dataResult.isSuccess=true;
-			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ALL)){
 			//CHECK THE CACHE FIRST
-			allDC = (ArrayList<DC>)TrackerCache.getInstance().getObject(AllConstants.CACHE_DC_ALL);
-			if (allDC != null) {
-				/*dataResult = new DataResult<String>();
-				dataResult.data = Utility.getInstance().toJson(allUsers);
-				dataResult.isSuccess=true;*/
-			}else {
+			allDC = (ArrayList<DC>)TrackerCache.getInstance().getObject(AllConstants.CACHE_DC+AllConstants.CACHE_ALL);
+			if (!(allDC != null)) {
 				allDC = dcDAO.getAll();
-				TrackerCache.getInstance().addObject(AllConstants.CACHE_DC_ALL, allDC);
+				TrackerCache.getInstance().addObject(AllConstants.CACHE_DC+AllConstants.CACHE_ALL, allDC);
 			}
+			dataResult = new DataResult<String>();
 			dataResult.data = Utility.getInstance().toJson(allDC);
 			dataResult.isSuccess=true;
 			

@@ -42,18 +42,18 @@ public class WorkLogService extends BusinessService {
 		}else*/
 			
 		if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_ADD)){
-			workLogDAO.add(srcWorkLog, AllConstants.DATABASE_TABLE_WORL_LOG);
+			workLogDAO.add(srcWorkLog, AllConstants.DATABASE_TABLE_WORK_LOG);
 			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			//dataResult.data = Utility.getInstance().toJson(destcountryName);
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_DELETE)){
-			workLogDAO.delete(srcWorkLog,AllConstants.DATABASE_TABLE_WORL_LOG);
+			workLogDAO.delete(srcWorkLog,AllConstants.DATABASE_TABLE_WORK_LOG);
 			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			
 		}else if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_UPDATE)){
-			workLogDAO.update(srcWorkLog,AllConstants.DATABASE_TABLE_WORL_LOG);
+			workLogDAO.update(srcWorkLog,AllConstants.DATABASE_TABLE_WORK_LOG);
 			dataResult = new DataResult<String>();
 			dataResult.isSuccess=true;
 			
@@ -61,7 +61,7 @@ public class WorkLogService extends BusinessService {
 			//CHECK THE CACHE FIRST
 			workLogs = (List<WorkLog>)TrackerCache.getInstance().getObject(AllConstants.CACHE_MARKET_ALL);
 			if (! (workLogs != null)) {
-				workLogs = workLogDAO.getAll(AllConstants.DATABASE_TABLE_WORL_LOG);
+				workLogs = workLogDAO.getAll(AllConstants.DATABASE_TABLE_WORK_LOG);
 				TrackerCache.getInstance().addObject(AllConstants.CACHE_MARKET_ALL,workLogs);
 			}
 			dataResult = new DataResult<String>();
