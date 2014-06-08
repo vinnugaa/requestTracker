@@ -73,7 +73,8 @@ public class AllConstants {
 	public static final String SERVICE_MAIN_MARKET = "srvcMarket";
 	public static final String SERVICE_WORK_LOG = "srvcWorkLog";
 	public static final String SERVICE_MAIN_SITE_ENHANCER = "srvcSiteEnhancer";
-	public static final String SERVICE_REQUESTTYPE = "srvcRequestType";
+	public static final String SERVICE_REQUEST_TYPE = "srvcRequestType";
+	public static final String SERVICE_REQUEST_STATUS = "srvcRequestStatus";
 	
 	public static final String SERVICE_METHOD_VALIDATE = "srvcValidate";
 	
