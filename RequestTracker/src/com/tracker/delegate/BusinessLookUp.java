@@ -5,8 +5,10 @@ import com.tracker.service.BusinessService;
 import com.tracker.service.DCService;
 import com.tracker.service.DatabaseTableService;
 import com.tracker.service.MarketService;
+import com.tracker.service.RequestStatusService;
 import com.tracker.service.SiteEnhanceService;
 import com.tracker.service.UserService;
+import com.tracker.service.WorkLogService;
 
 public class BusinessLookUp {
 
@@ -24,6 +26,12 @@ public class BusinessLookUp {
 		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_MARKET)){
 			businessService = new MarketService(method, inputJson);
 		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_WORK_LOG)){
+			businessService = new WorkLogService(method, inputJson);
+		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_REQUEST_TYPE)){
+			businessService = new RequestStatusService(method, inputJson);
+		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_REQUEST_STATUS)){
+			businessService = new MarketService(method, inputJson);
+		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_GENERIC)){
 			businessService = new MarketService(method, inputJson);
 		}
 		

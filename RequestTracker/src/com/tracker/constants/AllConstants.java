@@ -70,6 +70,7 @@ public class AllConstants {
 	public static final String SERVICE_MAIN_USER = "srvcUser";
 	public static final String SERVICE_MAIN_DC = "srvcDC";
 	public static final String SERVICE_MAIN_TABLES = "srvcTables";
+	public static final String SERVICE_MAIN_GENERIC = "srvcGeneric";
 	public static final String SERVICE_MAIN_MARKET = "srvcMarket";
 	public static final String SERVICE_WORK_LOG = "srvcWorkLog";
 	public static final String SERVICE_MAIN_SITE_ENHANCER = "srvcSiteEnhancer";
