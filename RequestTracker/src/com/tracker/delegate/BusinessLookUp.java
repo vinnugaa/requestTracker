@@ -23,6 +23,8 @@ public class BusinessLookUp {
 			businessService = new SiteEnhanceService(method, inputJson);
 		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_MAIN_MARKET)){
 			businessService = new MarketService(method, inputJson);
+		}else if(mainService.equalsIgnoreCase(AllConstants.SERVICE_WORK_LOG)){
+			businessService = new MarketService(method, inputJson);
 		}
 		
 		return businessService;

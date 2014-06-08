@@ -34,7 +34,7 @@ public class GenericModelDAO {
 	public void add(GenericModel model, String tableName){
 		try {
 			String command = "INSERT INTO " + tableName + " VALUES ( '"
-					+ model.getId() + "', "
+					+ model.getId() + "', '"
 					+ model.getName() + "' "
 					+ " ) ";
 			System.out.println(command);

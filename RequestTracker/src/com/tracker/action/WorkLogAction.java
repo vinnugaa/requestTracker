@@ -8,7 +8,6 @@ import org.apache.struts2.ServletActionContext;
 import com.tracker.constants.AllConstants;
 import com.tracker.data.DataResult;
 import com.tracker.delegate.BusinessDelegate;
-import com.tracker.model.User;
 import com.tracker.model.WorkLog;
 import com.tracker.utils.Utility;
 
@@ -38,36 +37,51 @@ public class WorkLogAction {
 	
 	public String delete(){
 		DataResult<String> dataResult = null;
-		User user = new User();/*
+		WorkLog workLog = new WorkLog();
+		workLog.setDate(getDate());
+		workLog.setId(getId());
+		workLog.setLog(getLog());
+		workLog.setRequestId(getRequestId());
+		/*
 		user.setUserid(getUserid());
 		/*user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(user));
+		bd.setServiceInput(AllConstants.SERVICE_WORK_LOG, AllConstants.SERVICE_METHOD_DELETE, Utility.getInstance().toJson(workLog));
 		dataResult = bd.doTask();
 		return getResult(dataResult.isSuccess);
 	}
 	
 	public String update(){
 		DataResult<String> dataResult = null;
-		User user = new User();/*
+		WorkLog workLog = new WorkLog();
+		workLog.setDate(getDate());
+		workLog.setId(getId());
+		workLog.setLog(getLog());
+		workLog.setRequestId(getRequestId());
+		/*
 		user.setUserid(getUserid());
 		user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(user));
+		bd.setServiceInput(AllConstants.SERVICE_WORK_LOG, AllConstants.SERVICE_METHOD_UPDATE, Utility.getInstance().toJson(workLog));
 		dataResult = bd.doTask();
 		return getResult(dataResult.isSuccess);
 	}
 	
 	public String getAll(){
 		DataResult<String> dataResult = null;
+		WorkLog workLog = new WorkLog();
+		workLog.setDate(getDate());
+		workLog.setId(getId());
+		workLog.setLog(getLog());
+		workLog.setRequestId(getRequestId());
 		/*User user = new User();
 		user.setUserid(getUserid());
 		user.setName(getName());
 		user.setRole(getRole());
 		user.setPassword(getPassword());*/
-		bd.setServiceInput(AllConstants.SERVICE_MAIN_USER, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
+		bd.setServiceInput(AllConstants.SERVICE_WORK_LOG, AllConstants.SERVICE_METHOD_ALL, AllConstants.EMPTY_STRING);
 		dataResult = bd.doTask();
 		System.out.println("dataResult.data:: "+ dataResult.data);
 		// TODO:: Uncomment the below statement
