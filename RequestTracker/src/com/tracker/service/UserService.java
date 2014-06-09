@@ -30,6 +30,7 @@ public class UserService extends BusinessService {
 		
 		if(method.equalsIgnoreCase(AllConstants.SERVICE_METHOD_VALIDATE)){
 			destUser =  userDAO.getUser(srcUser);
+			System.out.println("user service");
 			if(destUser != null){
 				dataResult.isSuccess=true;
 				dataResult.data = Utility.getInstance().toJson(destUser);

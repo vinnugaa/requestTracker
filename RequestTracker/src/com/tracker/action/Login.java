@@ -23,7 +23,7 @@ public class Login implements SessionAware{
 		
 		User user = new User();
 		
-		user.setName(getUserid());
+		user.setUserid(getUserid());
 		user.setPassword(getPassword());
 		
 		String str = (new Gson()).toJson(user);
@@ -34,23 +34,25 @@ public class Login implements SessionAware{
 		dataResult = bd.doTask();
 		
 		if(dataResult.isSuccess) {
-			
+			System.out.println("success");
 			return "success";
 		}
 		else	{
+			System.out.println("failure");
 			return "failure";
 		}
 	}
-	@Override
+	
 	public void setSession(Map<String, Object> map) {
 		// TODO Auto-generated method stub
 		sessionMap=(SessionMap)map;
 		sessionMap.put("login", "true");
-		sessionMap.put("profile", dataResult.data);
+		//sessionMap.put("profile", dataResult.data);
 	}
 	
-	public void logout(){
+	public String logout(){
 		sessionMap.invalidate();
+		return "success";
 	}
 
 	

@@ -15,29 +15,29 @@
         <action name="login"
             class="com.tracker.action.Login">
             <result name="success">/jsp/home.jsp</result>
-            <result name="error">/jsp/login.jsp</result>
+            <result name="failure">/jsp/login.jsp</result>
         </action>
         
         <!-- USER -->
         <action name="add-user" method="add"
             class="com.tracker.action.UserAction">
             <result name="success">/jsp/home.jsp</result>
-            <result name="error">/jsp/login.jsp</result>
+            <result name="failure">/jsp/login.jsp</result>
         </action>
         <action name="delete-user" method="delete"
             class="com.tracker.action.UserAction">
             <result name="success">/jsp/home.jsp</result>
-            <result name="error">/jsp/login.jsp</result>
+            <result name="failure">/jsp/login.jsp</result>
         </action>
         <action name="update-user" method="update"
             class="com.tracker.action.UserAction">
             <result name="success">/jsp/home.jsp</result>
-            <result name="error">/jsp/login.jsp</result>
+            <result name="failure">/jsp/login.jsp</result>
         </action>
         <action name="all-users" method="getAll"
             class="com.tracker.action.UserAction">
             <result name="success">/jsp/home.jsp</result>
-            <result name="error">/jsp/login.jsp</result>
+            <result name="failure">/jsp/login.jsp</result>
         </action>
         
         
@@ -45,37 +45,37 @@
 		<action name="all-tables" method="getAll"
 			class="com.tracker.action.DatabaseTablesAction">
 			<result name="success">/jsp/home.jsp</result>
-			<result name="error">/jsp/login.jsp</result>
+			<result name="failure">/jsp/login.jsp</result>
 		</action>
 		<action name="purge-table" method="purgeEach"
 			class="com.tracker.action.DatabaseTablesAction">
 			<result name="success">/jsp/home.jsp</result>
-			<result name="error">/jsp/login.jsp</result>
+			<result name="failure">/jsp/login.jsp</result>
 		</action>
 		<action name="purge-all-tables" method="purgeAll"
 			class="com.tracker.action.DatabaseTablesAction">
 			<result name="success">/jsp/home.jsp</result>
-			<result name="error">/jsp/login.jsp</result>
+			<result name="failure">/jsp/login.jsp</result>
 		</action>
 		<action name="delete-table" method="delete"
 			class="com.tracker.action.DatabaseTablesAction">
 			<result name="success">/jsp/home.jsp</result>
-			<result name="error">/jsp/login.jsp</result>
+			<result name="failure">/jsp/login.jsp</result>
 		</action>
 		<action name="delete-all-tables" method="deleteAll"
 			class="com.tracker.action.DatabaseTablesAction">
 			<result name="success">/jsp/home.jsp</result>
-			<result name="error">/jsp/login.jsp</result>
+			<result name="failure">/jsp/login.jsp</result>
 		</action>
 		<action name="create-table" method="create"
 			class="com.tracker.action.DatabaseTablesAction">
 			<result name="success">/jsp/home.jsp</result>
-			<result name="error">/jsp/login.jsp</result>
+			<result name="failure">/jsp/login.jsp</result>
 		</action>
 		<action name="create-all-tables" method="createAll"
 			class="com.tracker.action.DatabaseTablesAction">
 			<result name="success">/jsp/home.jsp</result>
-			<result name="error">/jsp/login.jsp</result>
+			<result name="failure">/jsp/login.jsp</result>
 		</action>
         
         
@@ -84,12 +84,12 @@
         <action name="createusertable" method="createUserTable"
             class="com.tracker.action.DBTableSetup">
             <result name="success">/jsp/home.jsp</result>
-            <result name="error">/jsp/login.jsp</result>
+            <result name="failure">/jsp/login.jsp</result>
         </action>
         <action name="removeusertable" method="removeUserTable"
             class="com.tracker.action.DBTableSetup">
             <result name="success">/jsp/home.jsp</result>
-            <result name="error">/jsp/login.jsp</result>
+            <result name="failure">/jsp/login.jsp</result>
         </action>
         -->
     </package>
